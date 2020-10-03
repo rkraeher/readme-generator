@@ -1,0 +1,19 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "A CLI application for generating a professional project README.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkraeher/readme-generator.git"
+  },
+  "author": "rkraeher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkraeher/readme-generator/issues"
+  },
+  "homepage": "https://github.com/rkraeher/readme-generator#readme"
+}
