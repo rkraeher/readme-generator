@@ -1,7 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-// use moment js to get the year to insert it into the copyright.
-let year = 2020; // This is for testing purposes. 
+const todaysDate = new Date();
+const year = todaysDate.getFullYear();
 
 inquirer.prompt([
     {
@@ -47,7 +47,7 @@ inquirer.prompt([
     {
         type: 'input',
         message: 'Provide instructions for testing the project: ',
-        name: 'install'
+        name: 'tests'
     },
     {
         type: 'list',
