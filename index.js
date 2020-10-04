@@ -1,31 +1,91 @@
 const fs = require("fs");
-const inquirer = requier("inquirer");
+const inquirer = require("inquirer");
+// use moment js to get the year to insert it into the copyright.
+let year = 2020; // This is for testing purposes. 
 
 inquirer.prompt([
-    
+    {
+        type: 'input',
+        message: 'For licensing purposes, what is your name?',
+        name: 'fullname'
+    },
+    {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'github'
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email'
+    },
+    {
+        type: 'input',
+        message: 'What is your project title?',
+        name: 'title'
+    },
+    {
+        type: 'input',
+        message: 'Provide a brief description of the project: ',
+        name: 'description'
+    },
+    {
+        type: 'input',
+        message: 'Provide installation instructions: ',
+        name: 'install'
+    },
+    {
+        type: 'input',
+        message: 'Provide usage information: ',
+        name: 'usage'
+    },
+    {
+        type: 'input',
+        message: 'Provide the guidelines for contributing to the project: ',
+        name: 'contributing'
+    },
+    {
+        type: 'input',
+        message: 'Provide instructions for testing the project: ',
+        name: 'install'
+    },
+    {
+        type: 'list',
+        message: 'Select a license for your application.',
+        name: 'license',
+        choices: ['MIT', 'ISC', 'GNU', 'Apache']
+    },
+
 ]).then(function (data) {
-  console.log(data);
-
   let readme = 
-    `# ${title}
+    `# ${data.title}
+    
+    ${data.description}
+    
+## Table of Contents 
+    (list links here)
+    
+## Installation
+    ${data.install}
 
-    ## ${description}
+## Usage
+    ${data.usage}
     
-    ## ${table}
+## License 
+    ${data.license}
+    Copyright (c) ${year} ${data.fullname}
     
-    ## ${install}
+## Contributing
+    ${data.contributing}
     
-    ## ${usage}
+## Tests
+    ${data.tests}
     
-    ## ${license}
-    
-    ## ${contributing}
-    
-    ## ${tests}
-    
-    ## ${questions}`
+## Questions
+    You can reach me at ${data.email}
+    Visit my [GitHub] ${data.github}`
 
-  fs.writeFile("README.md", readme, function (err) {
+  fs.writeFile("good-readme.md", readme, function (err) {
     if (err) throw err;
     console.log(`You have successfully generated a good README file.`);
   });
