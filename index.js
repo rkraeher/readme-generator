@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const axios = require("axios");
 const todaysDate = new Date();
 const year = todaysDate.getFullYear();
 
@@ -7,7 +8,7 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "For licensing purposes, what is your name?",
+      message: "For licensing purposes enter your name:",
       name: "fullname",
     },
     {
@@ -17,7 +18,7 @@ inquirer
     },
     {
       type: "input",
-      message: "What is your email address?",
+      message: "Enter your email address:",
       name: "email",
     },
     {
@@ -27,22 +28,22 @@ inquirer
     },
     {
       type: "input",
-      message: "Provide a brief description of the project: ",
+      message: "Give a brief description of the project:",
       name: "description",
     },
     {
       type: "input",
-      message: "Provide installation instructions: ",
+      message: "Tell users how to install your application: ",
       name: "install",
     },
     {
       type: "input",
-      message: "Provide usage information: ",
+      message: "Describe how to use your application:",
       name: "usage",
     },
     {
       type: "input",
-      message: "Provide the guidelines for contributing to the project: ",
+      message: "Offer guidelines for contributing to the project:",
       name: "contributing",
     },
     {
@@ -52,7 +53,7 @@ inquirer
     },
     {
       type: "list",
-      message: "Select a license for your application.",
+      message: "Select a license for your application. Use the arrow keys and press enter to select.",
       name: "license",
       choices: ["MIT", "ISC", "GNU", "Apache"],
     },
