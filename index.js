@@ -59,7 +59,8 @@ inquirer
     },
   ])
   .then(function (data) {
-    let readme = `# ${data.title}
+    const githubUrl = `https://github.com/${data.github}`;
+    const readme = `# ${data.title}
 
 ## Description
     ${data.description}
@@ -73,24 +74,24 @@ inquirer
 6. [Questions](#questions)
     
 ## Installation
-    ${data.install}
+${data.install}
 
 ## Usage
-    ${data.usage}
+${data.usage}
     
 ## License 
-    ${data.license}
-    Copyright (c) ${year} ${data.fullname}
+${data.license}  
+Copyright (c) ${year} ${data.fullname}
     
 ## Contributing
-    ${data.contributing}
+${data.contributing}
     
 ## Tests
-    ${data.tests}
+${data.tests}
     
 ## Questions
-    You can reach me at ${data.email}
-    Visit my [GitHub] ${data.github}`;
+Email me: ${data.email}  
+Visit my [GitHub](${githubUrl})`;
 
     fs.writeFile("README.md", readme, function (err) {
       if (err) throw err;
