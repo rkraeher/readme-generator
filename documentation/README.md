@@ -19,7 +19,9 @@ The application requires node.js and you must include the following packages: fs
 Open the application in your terminal and run the following command: "node index.js". Follow the prompts to generate your README markdown file directly in your current directory, where you can edit it to add/remove sections and media to suit your project needs.
 
 ## Demo
-    
+<img src="demo.gif" alt="Application usage demo video">  
+
+
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 Copyright (c) 2020 Rudi Kraeher
