@@ -1,9 +1,12 @@
+// Node dependencies
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+// Date
 const todaysDate = new Date();
 const year = todaysDate.getFullYear();
 
+// Main application prompt
 inquirer
   .prompt([
     {
@@ -62,6 +65,7 @@ inquirer
     const githubUrl = `https://github.com/${data.github}`;
     let copyright;
     
+    // This statement grabs the corresponding license badge based on the user's selection.
     switch(data.license) {
         case "Apache":
             copyright = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
@@ -77,6 +81,7 @@ inquirer
             break;
         };
     
+        // This is the README.md template
     const readme = `# ${data.title}
 
 ## Description
@@ -110,6 +115,7 @@ ${data.tests}
 If you have any questions about the repo you can email me at ${data.email}.  
 Visit my [GitHub](${githubUrl}) to see more of my work.`;
 
+    // This writes the README.md file using the user input. 
     fs.writeFile("README.md", readme, function (err) {
       if (err) throw err;
       console.log(
