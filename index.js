@@ -36,7 +36,7 @@ inquirer
     },
     {
       type: "input",
-      message: "Tell users how to install your application: ",
+      message: "Tell users how to install your application:",
       name: "install",
     },
     {
@@ -46,12 +46,17 @@ inquirer
     },
     {
       type: "input",
+      message: "List the technologies you used to build your app:",
+      name: "tech",
+    },
+    {
+      type: "input",
       message: "Offer guidelines for contributing to the project:",
       name: "contributing",
     },
     {
       type: "input",
-      message: "Provide instructions for testing the project: ",
+      message: "Provide instructions for testing the project:",
       name: "tests",
     },
     {
@@ -91,17 +96,27 @@ inquirer
 ## Table of Contents 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [License](#license)
-4. [Contributing](#contributing)
-5. [Tests](#tests)
-6. [Questions](#questions)
+3. [Technologies](#technologies)
+4. [Demo](#demo)
+5. [License](#license)
+6. [Contributing](#contributing)
+7. [Tests](#tests)
+8. [Questions](#questions)
     
 ## Installation
 ${data.install}
 
 ## Usage
 ${data.usage}
-    
+
+## Technologies
+${data.tech}
+
+## Demo
+Add in your demo videos, gifs, and imagers here.
+For gifs: "<img src="demo.gif" alt="demo video">"  
+For images: "![Screenshot of deployed app](filepath/screenshot.png)"    
+
 ## License 
 ${copyright}  
 Copyright (c) ${year} ${data.fullname}
