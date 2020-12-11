@@ -1,6 +1,7 @@
 // Node dependencies
 const fs = require("fs");
 const inquirer = require("inquirer");
+const path = require("path");
 
 // Date
 const todaysDate = new Date();
@@ -23,6 +24,7 @@ inquirer
       type: "input",
       message: "Enter your email address:",
       name: "email",
+      //TODO: Add email regex validation. 
     },
     {
       type: "input",
@@ -132,10 +134,12 @@ If you have any questions about the repo you can email me at ${data.email}.
 Visit my [GitHub](${githubUrl}) to see more of my work.`;
 
     // This writes the README.md file using the user input.
-    fs.writeFile("README.md", readme, function (err) {
+    fs.writeFileSync(path.join(__dirname, "output", "README.md"), readme, function (err) {
       if (err) throw err;
       console.log(
-        `You have successfully generated a good README.md file. Please check the current directory for your new README.`
+        `You have successfully generated a good README.md file. Please check the 'output' directory for your new README.`
       );
+      process.exit();
+      //TODO: These two callbacks never occur because they are inside the fs function's err callback. 
     });
   });
